@@ -1,0 +1,33 @@
+<div ng-controller="srchCtrl">
+	<form name="dataForm">
+		<div class="form-group">
+			<label for="username">Full Name</label>
+			<input type="text" class="form-control" id="username" placeholder="Full Name" ng-model="data.addusrName">
+		</div>
+		<div class="form-group">
+			<label for="usercity">City</label>
+			<input type="text" class="form-control" id="usercity" placeholder="City" ng-model="data.addusrCity">
+		</div>
+
+		<hr />
+
+		<table class="table table-bordered" ng-show="showEnable(data)">
+			<thead>
+				<tr>
+					<th>Full Name</th>
+					<th>City</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>{{data.addusrName | uppercase}}</td>
+					<td>{{data.addusrCity}}</td>
+				</tr>
+			</tbody>
+		</table>
+
+		<a type="submit" class="btn btn-success pull-left" ng-href="#/all-user">All User List</a>
+		<button type="submit" class="btn btn-primary pull-right" ng-show="showEnable(data)" ng-click="">Add User</button>
+
+	</form>
+</div>
